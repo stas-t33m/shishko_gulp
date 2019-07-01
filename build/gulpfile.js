@@ -1,54 +1,54 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCSS = require('gulp-clean-css'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    del = require('del'),
-    browserSync = require('browser-sync'),
-    fileinclude = require('gulp-file-include');
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  cleanCSS = require('gulp-clean-css'),
+  uglify = require('gulp-uglify'),
+  concat = require('gulp-concat'),
+  del = require('del'),
+  browserSync = require('browser-sync'),
+  fileinclude = require('gulp-file-include');
 
 sass.compiler = require('node-sass'); // Переназначаем компилирование
 
 //Обработка scss кода
 function scss() {
   return gulp.src('./src/scss/main.scss')
-  .pipe(sass())
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-  .pipe(cleanCSS({
-    level: 2
-  }))
-  .pipe(gulp.dest('./build'))
-  .pipe(browserSync.reload({stream: true}))
+    .pipe(sass())
+    .pipe(autoprefixer({
+      cascade: false
+    }))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+    .pipe(gulp.dest('./build'))
+    .pipe(browserSync.reload({ stream: true }))
 }
 //Обработка js кода
 function js() {
   return gulp.src('./src/js/*.js')
-  .pipe(concat('script.js'))
-  .pipe(uglify({toplevel: true}))
-  .pipe(gulp.dest('./build'))
-  .pipe(browserSync.reload({stream: true}))
+    .pipe(concat('script.js'))
+    .pipe(uglify({ toplevel: true }))
+    .pipe(gulp.dest('./build'))
+    .pipe(browserSync.reload({ stream: true }))
 }
 //Инклудинг компонентов на страницы и последующая обработка html кода
 function html() {
   return gulp.src('src/html/pages/*.html')
-  .pipe(fileinclude({prefix: '@@', basepath: '@file'}))
-  .pipe(gulp.dest('./build'))
-  .pipe(browserSync.reload({ stream: true }))
+    .pipe(fileinclude({ prefix: '@@', basepath: '@file' }))
+    .pipe(gulp.dest('./build'))
+    .pipe(browserSync.reload({ stream: true }))
 }
 //Обработка шрифтов
 function fonts() {
   return gulp.src('./src/fonts/*')
-  .pipe(gulp.dest('./build/fonts'))
-  .pipe(browserSync.reload({ stream: true }))
+    .pipe(gulp.dest('./build/fonts'))
+    .pipe(browserSync.reload({ stream: true }))
 }
 //Обработка img
 function img() {
   return gulp.src('./src/image/*')
-  .pipe(gulp.dest('./build/img'))
-  .pipe(browserSync.reload({ stream: true }))
+    .pipe(gulp.dest('./build/img'))
+    .pipe(browserSync.reload({ stream: true }))
 }
 //Удалить всё в указанной папке
 function clean() {
@@ -83,3 +83,8 @@ gulp.task('watch', watch);
 gulp.task('build', gulp.series(clean, gulp.parallel(scss, js, html, fonts, img)))
 //Запуск dev проекта
 gulp.task('dev', gulp.series('build', 'watch'));
+
+var gulp = require('gulp');
+gulp.task('default', function () {
+  console.log('Hello Gulp!')
+});
