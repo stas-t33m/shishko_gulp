@@ -1,0 +1,179 @@
+.infoBlock {
+  background: linear-gradient($infoBlock__bg, $infoBlock__bg), url("img/Rectangle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: $fonts-content;
+  &__block {
+    padding: 55px 0;
+  }
+  &__content {
+    display: flex;
+    margin-top: 40px;
+  }
+  &__article {
+    padding-left: 30px;
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 27px;
+    color: $white;
+    margin: 0;
+    text-overflow: ellipsis;
+  }
+  &__img_avatar {
+    width: 263px;
+    height: 265px;
+  }
+  &__title {
+    text-align: left;
+    text-transform: uppercase;
+    @include title_main();
+    color: $white;
+    margin: 0;
+  }
+  &__button {
+    margin-top: 30px;
+  }
+  &__link {
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 8px 20px;
+    background: $orange;
+    color: $black;
+    font-weight: 600;
+    transition: 0.5s;
+    display: inline-block;
+
+    &:active {
+      text-decoration: none;
+      color: $black;
+      transform: scale(1.1);
+      background: $infoBlock__link-active; /*тут что то не так, есть вопросы*/
+    }
+    &:hover {
+      text-decoration: none;
+      color: $black;
+      transform: scale(1.1);
+      background: $infoBlock__link-hover;
+    }
+  }
+}
+.blog {
+  font-family: $fonts-content;
+  background: $blog__bg;
+  &__block {
+    padding: 54px 0;
+  }
+  &__container_flex {
+    display: flex;
+    justify-content: space-around; /* не between для адаптива*/
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  &__box {
+    margin-bottom: 30px;
+    max-width: 360px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.07);
+  }
+  &__title_box {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: uppercase;
+  }
+  &__title_main {
+    color: $black;
+    @include title_main();
+    @include no_margin();
+  }
+  &__img_box {
+    background: url("./img/drink.png");
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 185px;
+  }
+
+  &__article {
+    padding: 15px 18px 20px 20px;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 27px;
+    @include no_margin();
+  }
+  &__content_bottom {
+    padding-top: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    color: $black;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: $blog__link;
+    &:hover {
+      text-decoration: none;
+      color: $black;
+    }
+  }
+  &__link_news {
+    padding: 5px 30px;
+  }
+  &__link_all_news {
+    padding: 5px 35px;
+  }
+  &__btn {
+    margin-top: 20px;
+    text-align: center;
+  }
+  &__date {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+.contacts {
+  background: $contacts__bg;
+  font-family: $fonts-content;
+  &__block {
+    padding: 18px 0 55px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  &__box {
+    width: 262px;
+    height: 171px;
+    background: $contacts_box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:hover img {
+      opacity: 0.6;
+      transition: 0.5s;
+    }
+    img {
+      height: 56px;
+    }
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $black;
+    font-size: 38px;
+    line-height: 72px;
+    margin: 0;
+  }
+}

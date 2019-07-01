@@ -1,0 +1,36 @@
+.blog {
+  &__container_content {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+  }
+  &__title {
+    font-size: 44px;
+    line-height: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include no_margin();
+  }
+  &__crutch {
+    padding-top: 26px;
+  }
+  &__img_big {
+    margin: 45px 0 40px 0;
+    max-width: 1180px;
+    height: 299px;
+    background: url("img/drink_big.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;  
+  }
+  &__content_news {
+    margin-bottom: 52px;
+  }
+  &__content_news_bottom {
+    margin-bottom: 40px;
+  }
+}

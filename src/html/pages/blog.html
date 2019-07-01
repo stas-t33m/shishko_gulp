@@ -1,0 +1,36 @@
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="main.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css">
+  <title>blog</title>
+</head>
+
+<body>
+  @@include('./../components/header.html')
+  <main>
+
+    <div class="blog">
+      <div class="container">
+        <div class="blog__block">
+          <h1 class="blog__title_main text_left">мой блог</h1>
+          <div class="blog__container_flex">
+            @@include('./../components/blog__box.html')
+            @@include('./../components/blog__box.html')
+            @@include('./../components/blog__box.html')
+            @@include('./../components/blog__box.html')
+            @@include('./../components/blog__box.html')
+            @@include('./../components/blog__box.html')
+          </div>
+          <div class="blog__btn_blog text_center"><a class="blog__link  blog__link_download" href="#">загрузить ешё</a></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  @@include('./../components/footer.html')
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+
+$white: #ffffff;
+$black: #000000;
+
+
+$fonts-content: "Open Sans";
+
+
+$contacts__link-hover: #c4bdc0;
+$header__link-hover: #ff6969;
+$infoBlock__link-hover: #eccc00;  
+$infoBlock__link-active: #FFEB6C;
+$transparent: rgba(0, 0, 0, 0);
+$header__bg: #ffffff;
+$infoBlock__bg: rgba(0, 0, 0, 0.4);
+$blog__bg: #f2f2f2;
+$contacts__bg: #ffe01b;
+$footer__bg: #ffffff;
+$blog__link: #ffe01b;
+$phone_fixed: #ff6969;
+$contacts__bgc: #ffe01b;
+$orange: #ffe01b;
+$contacts_box: #343434;
+
+$weight: 655px;
+$height: 409px;
+
+@mixin border_black {
+  border: 1px solid black;
+}
+@mixin no_margin {
+  margin: 0;
+}
+@mixin img_size {
+  width: 655px;
+  height: 409px;
+  background-repeat: no-repeat;
+}
+@mixin title_main {
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 75px;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: $fonts-content;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.blog__date {
+  font-size: 20px;
+  line-height: 27px;
+}
+.text_left {
+  text-align: left;
+}
+.text_center {
+  text-align: center;
+}
+.text_right {
+  text-align: right;
+}
+.phone_fixed {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 35px;
+  right: 45px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: $phone_fixed;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  
+  &__icon_img {
+    height: 32px;
+    width: 32px;
+  }
+}

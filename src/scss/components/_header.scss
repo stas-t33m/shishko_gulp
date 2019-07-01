@@ -1,0 +1,35 @@
+.header {
+  background-color: $white;
+  font-family: $fonts-content;
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 0;
+  }
+  &__logo {
+    background: url("img/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 39.5px 95.5px;
+    transition: 0.5s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    color: $black;
+    font-size: 30px;
+    line-height: 54px;
+    padding: 0 9px 0 0;
+    transition: 0.5s;
+    border-bottom: solid $transparent 1px; 
+    &:hover {
+      color: $header__link-hover;
+      text-decoration: none;
+      border-bottom: solid $header__link-hover 1px;
+    }
+  }
+}
