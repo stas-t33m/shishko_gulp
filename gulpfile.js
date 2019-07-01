@@ -8,9 +8,7 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   fileinclude = require('gulp-file-include');
 
-sass.compiler = require('node-sass'); // Переназначаем компилирование
-
-//Обработка scss кода
+sass.compiler = require('node-sass'); 
 function scss() {
   return gulp.src('./src/scss/main.scss')
     .pipe(sass())
@@ -23,38 +21,23 @@ function scss() {
     .pipe(gulp.dest('./build'))
     .pipe(browserSync.reload({ stream: true }))
 }
-//Обработка js кода
-function js() {
-  return gulp.src('./src/js/*.js')
-    .pipe(concat('script.js'))
-    .pipe(uglify({ toplevel: true }))
-    .pipe(gulp.dest('./build'))
-    .pipe(browserSync.reload({ stream: true }))
-}
-//Инклудинг компонентов на страницы и последующая обработка html кода
-function html() {
-  return gulp.src('src/html/pages/*.html')
-    .pipe(fileinclude({ prefix: '@@', basepath: '@file' }))
-    .pipe(gulp.dest('./build'))
-    .pipe(browserSync.reload({ stream: true }))
-}
-//Обработка шрифтов
+
+
 function fonts() {
   return gulp.src('./src/fonts/*')
     .pipe(gulp.dest('./build/fonts'))
     .pipe(browserSync.reload({ stream: true }))
 }
-//Обработка img
+
 function img() {
   return gulp.src('./src/image/*')
     .pipe(gulp.dest('./build/img'))
     .pipe(browserSync.reload({ stream: true }))
 }
-//Удалить всё в указанной папке
 function clean() {
   return del(['./build/*'])
 }
-//Просматривать файлы
+
 function watch() {
   browserSync.init({
     server: {
@@ -75,7 +58,6 @@ function watch() {
 }
 
 gulp.task('scss', scss);
-gulp.task('js', js);
 gulp.task('html', html);
 gulp.task('fonts', fonts);
 gulp.task('img', img);
